@@ -1,0 +1,18 @@
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+	bean-discovery-mode="annotated">
+	
+	<!-- The three bean discovery tags  -->
+	<!-- all - All types in the archive are considered for injection. 
+	annotated - Only types annotations will be considered for injection. 
+		none - Disable CDI. -->
+
+	<scan>
+		<exclude name="com.airline.models.*">
+			<if-class-not-available
+				name="com.airline.models.tatek" />
+		</exclude>
+	</scan>
+</beans>
